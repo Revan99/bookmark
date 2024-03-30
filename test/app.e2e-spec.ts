@@ -181,7 +181,8 @@ describe('App e2e', () => {
           .delete('/bookmarks/{id}')
           .withPathParams('id', '$S{bookmarkId}')
           .withHeaders({ Authorization: 'Bearer $S{userAt}' })
-          .expectStatus(HttpStatus.NO_CONTENT);
+          .expectStatus(HttpStatus.NO_CONTENT)
+          .expectBody('');
       });
     });
   });
